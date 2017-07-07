@@ -31,6 +31,7 @@ def createFileHash(filepath):
             filehandle.close()
     finally:
         return hash
+    
 # 获取html文件里面的链接
 def getLink(path):
     reg = r'(src|href)=[\'\"](.+?\.(js|css).*?)[\'\"]'
@@ -96,14 +97,6 @@ def joinSrc(path1,path2):
             arr1.pop()
             arr3.pop(0)
     return '/'.join(arr1)+'/'+'/'.join(arr3)
-
-# 分割路径     
-def splitSrc(path):
-    if path.find('/')!=-1:
-        arr =  path.split('/')
-    else:
-        arr = path.split('\\')
-    return arr
 
 if __name__ == "__main__":
     print('start...')
